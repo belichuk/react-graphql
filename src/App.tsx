@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import {Navbar, Nav} from 'react-bootstrap';
+import {Navbar, Nav, Container} from 'react-bootstrap';
+import {ApolloProvider} from '@apollo/client';
+import client from './components/ApolloClient';
 import SearchForm from './components/SearchForm';
+import GitHubRepos from './components/GitHubRepos';
 
 import './App.css';
 
@@ -8,7 +11,7 @@ function App() {
     const [query, setQuery] = useState('JavaScript');
 
     return (
-        <div>
+        <ApolloProvider client={client}>
             <Navbar bg="light" expand="lg">
                 <Navbar.Brand href="/">React/GraphQL</Navbar.Brand>
                 <Navbar.Collapse>
@@ -16,8 +19,10 @@ function App() {
                     <SearchForm query={query} onSubmit={setQuery} />
                 </Navbar.Collapse>
             </Navbar>
-            <div className="container">{query}</div>
-        </div>
+            <Container className="content" fluid="lg">
+                <GitHubRepos query={query} />
+            </Container>
+        </ApolloProvider>
     );
 }
 

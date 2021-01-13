@@ -8,8 +8,8 @@ interface Props {
 
 function SearchForm(props: Props) {
     const {query, onSubmit} = props;
-    const [searchText, setSearchText] = useState(query);
-    const onChangeSearchText = (e: any) => {
+    const [searchText, setSearchText] = useState<string>(query);
+    const onChangeSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchText(e.target.value);
     };
     const handleSubmit = (e: any) => {
