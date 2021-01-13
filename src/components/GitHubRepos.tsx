@@ -23,6 +23,12 @@ function GitHubRepos(props: Props) {
         }
     );
 
+    useEffect(() => {
+        setAfterCursor(null);
+        setCursorQueue([]);
+        setPage(1);
+    }, [query]);
+
     if (loading) return <p>Loading ...</p>;
     if (error) return <p>Error while fetching repositories</p>;
 
