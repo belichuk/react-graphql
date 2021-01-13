@@ -1,8 +1,14 @@
 # Simple project to demonstrate interaction between react and graphQL
 ## Environment variable 
+The easiest way to set variables is to modify the `.env.local` file.
 
 ### `PORT`
+
 By default PORT=8081, used by react-sript to set host port
+
+### `REACT_APP_GITHUB_AUTH_TOKEN`
+To run this example you will need to generate a [personal Github Token](https://github.com/settings/tokens) and 
+add it to local `.env.local` file.
 
 ## Available Scripts
 
