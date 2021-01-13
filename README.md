@@ -31,3 +31,10 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+## Docker
+
+The current project can be run in a docker container. Just run the following commands: 
+
+### `docker build -t sample:dev .`
+### `docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 8081:8081 -e CHOKIDAR_USEPOLLING=true sample:dev`
