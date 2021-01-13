@@ -36,5 +36,6 @@ Your app is ready to be deployed!
 
 The current project can be run in a docker container. Just run the following commands: 
 
-### `docker build -t sample:dev .`
-### `docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 8081:8081 -e CHOKIDAR_USEPOLLING=true sample:dev`
+`docker build -t sample:dev .`
+
+`docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 8081:8081 -e CHOKIDAR_USEPOLLING=true sample:dev`
